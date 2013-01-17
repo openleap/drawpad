@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drawpad - draw with your Leap</title>
+<script>
+ws;
+
+//Support Firefox
+if (!typeof(WebSocket) && typeof(MozWebSocket)) {
+  WebSocket = MozWebSocket;
+}
+
+// Create the socket with event handlers
+function init() {
+  //Create and open the socket
+  ws = new WebSocket("ws://localhost:6437/");
+  
+  //On connection
+  ws.onopen = function(event) {
+    document.getElementById("main").style.visibility = "visible";
+    document.getElementById("connection").innerHTML = "Leap connection good!";
+  };
+  
+  //On new message
+  ws.onmessage = function(event) {
+    var obj = JSON.parse(event.data);
+    var str = JSON.stringify(obj, undefined, 2);
+    document.getElementById("output").innerHTML = '<pre>' + str + '</pre>';
+  };
+  
+  //On socket close
+  ws.onclose = function(event) {
+    ws = null;
+    document.getElementById("main").style.visibility = "hidden";
+    document.getElementById("connection").innerHTML = "Leap connection killed";
+  }
+  
+  //On socket error
+  ws.onerror = function(event) {
+    alert("Received error");
+  };
+}
+</script>
+</head>
+<body onload="init();">
+<h1>Drawpad Data</h1>
+<div id="connection">Connect your Leap!</div>
+<div id="main" style="visibility:hidden">
+  <p>JSON data:</p>
+  <div id="output"></div>
+</div>
+</body>
+</html>
