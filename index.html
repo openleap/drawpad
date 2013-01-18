@@ -38,17 +38,12 @@ if (!typeof(WebSocket) && typeof(MozWebSocket)) {
 }
 
 function fingerDown(x,y,z) {
-    document.getElementById("reddot").style.marginTop = (y*-1)+'px';
-  document.getElementById("reddot").style.marginLeft = x+add+'px';
-
   addTap(x, y);
   redraw();
 }
 
 function fingerMove(x,y,z) {
     if(isdrawing){
-        document.getElementById("reddot").style.marginTop = (y*-1)+'px';
-  document.getElementById("reddot").style.marginLeft = x+add+'px';
       addTap(x, y, true);
       redraw();
   }
@@ -87,6 +82,9 @@ function init() {
     if (obj && !tempstop) {
     if (obj.pointables) {
     if (obj.pointables[0]) {
+      
+              document.getElementById("reddot").style.marginTop = (obj.pointables[0].tipPosition[1]*-1)+'px';
+  document.getElementById("reddot").style.marginLeft = fingerDown(obj.pointables[0].tipPosition[0]+add+'px';
 
       if (!isdrawing) {
         fingerDown(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
