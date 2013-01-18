@@ -79,13 +79,10 @@ function init() {
     var str = JSON.stringify(obj, undefined, 2);
     isdrawing=false;
     
-    if (obj && !tempstop) {
+    if (obj) {
     if (obj.pointables) {
     if (obj.pointables[0]) {
-      
-              document.getElementById("reddot").style.marginTop = (obj.pointables[0].tipPosition[1]*-1)+'px';
-  document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+add)+'px';
-
+      if (!tempstop) {
       if (!isdrawing) {
         fingerDown(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
       }
@@ -100,6 +97,9 @@ function init() {
       else {
         document.getElementById("tool").innerHTML = "Tool: False"
       }
+    }
+    document.getElementById("reddot").style.marginTop = (obj.pointables[0].tipPosition[1]*-1)+'px';
+    document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+add)+'px';
     }
     }
   }
