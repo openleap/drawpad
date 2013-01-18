@@ -17,7 +17,7 @@ function fingerdown(x,y,z) {
 
 function fingerMove(x,y,z) {
     if(isdrawing){
-      addClick(x, y, true);
+      addTap(x, y, true);
       redraw();
   }
 }
@@ -98,7 +98,7 @@ function init() {
   canvas.lineJoin = "round";
   canvas.lineWidth = 5;
     	
-  for(var i=0; i < clickX.length; i++)
+  for(var i=0; i < tapX.length; i++)
   {		
     canvas.beginPath();
     if(tapDrag[i] && i){
@@ -128,5 +128,8 @@ function init() {
   <p>JSON data:</p>
   <div id="output"></div>
 </div>
+<script>
+  setStuffUp();
+</script>
 </body>
 </html>
