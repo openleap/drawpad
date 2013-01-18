@@ -80,7 +80,10 @@ function init() {
     alert("Received error");
   };
   
-  function setStuffUp() {
+
+}
+
+    function setStuffUp() {
     canvas = document.getElementById('canvas').getContext("2d");
   }
   
@@ -90,7 +93,7 @@ function init() {
   canvas.strokeStyle = "#000000";
   canvas.lineJoin = "round";
   canvas.lineWidth = 5;
-  		
+    	
   for(var i=0; i < clickX.length; i++)
   {		
     canvas.beginPath();
@@ -104,7 +107,6 @@ function init() {
      canvas.stroke();
   }
   }
-}
 </script>
 <style type="text/css">
   #canvas {
