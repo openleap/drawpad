@@ -18,8 +18,8 @@ c));return this},trigger:function(a,c){i[a+":"+c]();return this},reset:function(
 var ws, isdrawing, add, tempstop;
 
 Mousetrap.bind('shift', function() { 
-  if (tempstop) tempstop=false;
-  if (!tempstop) tempstop=true
+  if (tempstop) { tempstop=false; }
+  else { tempstop=true; }
 });
 
 Mousetrap.bind('n', function() { 
