@@ -156,6 +156,7 @@ d=download drawing
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
 <canvas width="600" height="600" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994, idiot.</canvas>
+<div id="reddot"></div>
 <div id="main" style="visibility:hidden">
   <p>JSON data:</p>
   <div id="output"></div>
@@ -163,5 +164,15 @@ d=download drawing
 <script>
   setStuffUp();
 </script>
+<style>
+  #reddot {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: red;
+    margin-top: -305px;
+    margin-left: 295px;
+  }
+</style>
 </body>
 </html>
