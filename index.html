@@ -74,6 +74,8 @@ function init() {
     document.getElementById("output").innerHTML = '<pre>' + str + '</pre>';
   };
   
+  if (!isdrawing) { tapX= []; tapY=[] }
+  
   //On socket close
   ws.onclose = function(event) {
     ws = null;
