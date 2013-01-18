@@ -52,6 +52,8 @@ function init() {
     var str = JSON.stringify(obj, undefined, 2);
     isdrawing=false;
     
+    if (obj) {
+    if (obj.pointables) {
     if (obj.pointables[0]) {
       isdrawing=true;
       if (!isdrawing) {
@@ -65,6 +67,8 @@ function init() {
         document.getElementById("tool").innerHTML = "Tool: False"
       }
     }
+    }
+  }
     document.getElementById("output").innerHTML = '<pre>' + str + '</pre>';
   };
   
