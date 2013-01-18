@@ -38,7 +38,7 @@ if (!typeof(WebSocket) && typeof(MozWebSocket)) {
 }
 
 function fingerDown(x,y,z) {
-    document.getElementById("reddot").style.marginTop = (y*-1)-600+'px';
+    document.getElementById("reddot").style.marginTop = (y*-1)+'px';
   document.getElementById("reddot").style.marginLeft = x+add+'px';
 
   addTap(x, y);
@@ -47,7 +47,7 @@ function fingerDown(x,y,z) {
 
 function fingerMove(x,y,z) {
     if(isdrawing){
-        document.getElementById("reddot").style.marginTop = (y*-1)-600+'px';
+        document.getElementById("reddot").style.marginTop = (y*-1)+'px';
   document.getElementById("reddot").style.marginLeft = x+add+'px';
       addTap(x, y, true);
       redraw();
