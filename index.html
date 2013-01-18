@@ -57,10 +57,10 @@ function init() {
     if (obj.pointables[0]) {
 
       if (!isdrawing) {
-        fingerDown(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
+        fingerDown(obj.pointables[0].tipPosition[0]+360, obj.pointables[0].tipPosition[1]+360, obj.pointables[0].tipPosition[2]+360);
       }
       else {
-       fingerMove(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
+       fingerMove(obj.pointables[0].tipPosition[0]+360, obj.pointables[0].tipPosition[1]+360, obj.pointables[0].tipPosition[2]+360);
       }
       
             isdrawing=true;
@@ -122,8 +122,8 @@ function init() {
 </script>
 <style type="text/css">
   #canvas {
-    width: 360px;
-    height: 360px;
+    width: 720px;
+    height: 720px;
   }
 </style>
 </head>
