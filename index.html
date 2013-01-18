@@ -38,8 +38,8 @@ if (!typeof(WebSocket) && typeof(MozWebSocket)) {
 }
 
 function fingerDown(x,y,z) {
-    document.getElementById("reddot").marginTop = y-600+'px';
-  document.getElementById("reddot").marginLeft = x+'px';
+    document.getElementById("reddot").style.marginTop = y-600+'px';
+  document.getElementById("reddot").style.marginLeft = x+'px';
 
   addTap(x, y);
   redraw();
@@ -47,8 +47,8 @@ function fingerDown(x,y,z) {
 
 function fingerMove(x,y,z) {
     if(isdrawing){
-        document.getElementById("reddot").marginTop = y-600+'px';
-  document.getElementById("reddot").marginLeft = x+'px';
+        document.getElementById("reddot").style.marginTop = y-600+'px';
+  document.getElementById("reddot").style.marginLeft = x+'px';
       addTap(x, y, true);
       redraw();
   }
@@ -162,10 +162,6 @@ d=download drawing
 <div id="connection">Connect your Leap!</div>
 <canvas width="600" height="600" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994, idiot.</canvas>
 <div id="reddot"></div>
-<div id="main" style="visibility:hidden">
-  <p>JSON data:</p>
-  <div id="output"></div>
-</div>
 <script>
   setStuffUp();
 </script>
