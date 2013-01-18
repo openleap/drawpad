@@ -3,8 +3,9 @@
 <head>
 <title>Drawpad - draw with your Leap</title>
 <script>
-var ws, isdrawing;
+var ws, isdrawing, add;
 
+add=0;
 //Support Firefox
 if (!typeof(WebSocket) && typeof(MozWebSocket)) {
   WebSocket = MozWebSocket;
@@ -28,8 +29,8 @@ var tapDrag = new Array();
 
 function addTap(x, y, dragging)
 {
-  tapX.push(x);
-  tapY.push(y);
+  tapX.push(x+add);
+  tapY.push(y+add);
   tapDrag.push(dragging);
 }
 
@@ -57,10 +58,10 @@ function init() {
     if (obj.pointables[0]) {
 
       if (!isdrawing) {
-        fingerDown(obj.pointables[0].tipPosition[0]+360, obj.pointables[0].tipPosition[1]+360, obj.pointables[0].tipPosition[2]+360);
+        fingerDown(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
       }
       else {
-       fingerMove(obj.pointables[0].tipPosition[0]+360, obj.pointables[0].tipPosition[1]+360, obj.pointables[0].tipPosition[2]+360);
+       fingerMove(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
       }
       
             isdrawing=true;
