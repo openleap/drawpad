@@ -2,6 +2,8 @@
 <html>
 <head>
 <title>Drawpad - draw with your Leap</title>
+<script src="base64.js"></script>
+<script src="canvas2image.js"></script>
 <script>
 /* mousetrap v1.2.2 craig.is/killing/mice */
 (function(){function q(a,c,b){a.addEventListener?a.addEventListener(c,b,!1):a.attachEvent("on"+c,b)}function x(a){return"keypress"==a.type?String.fromCharCode(a.which):h[a.which]?h[a.which]:y[a.which]?y[a.which]:String.fromCharCode(a.which).toLowerCase()}function r(a,c){var a=a||{},b=!1,d;for(d in l)a[d]&&l[d]>c?b=!0:l[d]=0;b||(n=!1)}function z(a,c,b,d,F){var g,e,f=[],j=b.type;if(!k[a])return[];"keyup"==j&&s(a)&&(c=[a]);for(g=0;g<k[a].length;++g)if(e=k[a][g],!(e.seq&&l[e.seq]!=e.level)&&j==e.action&&
@@ -20,8 +22,13 @@ Mousetrap.bind('shift', function() {
   if (!tempstop) tempstop=true
 });
 
-Mousetrap.bind('d', function() { 
+Mousetrap.bind('n', function() { 
 document.getElementById('canvas').width=600
+});
+
+Mousetrap.bind('d', function() { 
+var oCanvas = document.getElementById("canvas");  
+Canvas2Image.saveAsPNG(oCanvas);
 });
 
 add=300;
@@ -143,8 +150,9 @@ function init() {
 </head>
 <body onload="init();">
 <h1>Drawpad</h1>
-D=delete drawing
-Shift=pause drawing
+n=new drawing
+shift=pause drawing
+d=download drawing
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
 <canvas width="600" height="600" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994, idiot.</canvas>
