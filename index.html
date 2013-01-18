@@ -5,7 +5,7 @@
 <script>
 var ws, isdrawing, add;
 
-add=0;
+add=320;
 //Support Firefox
 if (!typeof(WebSocket) && typeof(MozWebSocket)) {
   WebSocket = MozWebSocket;
@@ -30,7 +30,7 @@ var tapDrag = new Array();
 function addTap(x, y, dragging)
 {
   tapX.push(x+add);
-  tapY.push((y*-1)+400);
+  tapY.push((y*-1)+600);
   tapDrag.push(dragging);
 }
 
@@ -121,18 +121,12 @@ function init() {
   tapX = []; tapY=[]
   }
 </script>
-<style type="text/css">
-  #canvas {
-    width: 720px;
-    height: 720px;
-  }
-</style>
 </head>
 <body onload="init();">
 <h1>Drawpad Data:</h1>
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
-<canvas id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994, idiot.</canvas>
+<canvas width="720" height="720" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994, idiot.</canvas>
 <div id="main" style="visibility:hidden">
   <p>JSON data:</p>
   <div id="output"></div>
