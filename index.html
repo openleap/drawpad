@@ -38,12 +38,17 @@ if (!typeof(WebSocket) && typeof(MozWebSocket)) {
 }
 
 function fingerDown(x,y,z) {
+    document.getElementById("reddot").marginTop = y-600+'px';
+  document.getElementById("reddot").marginLeft = x+'px';
+
   addTap(x, y);
   redraw();
 }
 
 function fingerMove(x,y,z) {
     if(isdrawing){
+        document.getElementById("reddot").marginTop = y-600+'px';
+  document.getElementById("reddot").marginLeft = x+'px';
       addTap(x, y, true);
       redraw();
   }
