@@ -10,7 +10,7 @@ if (!typeof(WebSocket) && typeof(MozWebSocket)) {
   WebSocket = MozWebSocket;
 }
 
-function fingerdown(x,y,z) {
+function fingerDown(x,y,z) {
   addTap(x, y);
   redraw();
 }
@@ -57,9 +57,11 @@ function init() {
     if (obj.pointables[0]) {
       isdrawing=true;
       if (!isdrawing) {
-        fingerdown(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
+        fingerDown(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
       }
-      
+      else {
+       fingerMove(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
+      }
       
       //detect tool type
       if (obj.pointables[0].tool) { document.getElementById("tool").innerHTML = "Tool: True" }
