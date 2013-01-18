@@ -17,7 +17,7 @@ c));return this},trigger:function(a,c){i[a+":"+c]();return this},reset:function(
 
 var ws, isdrawing, add, tempstop;
 
-Mousetrap.bind('shift', function() { 
+Mousetrap.bind('p', function() { 
   if (tempstop) { tempstop=false; }
   else { tempstop=true; }
 });
@@ -154,7 +154,7 @@ function init() {
 <body onload="init();">
 <h1>Drawpad</h1>
 n=new drawing
-shift=pause drawing
+p=pause drawing
 d=download drawing
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
