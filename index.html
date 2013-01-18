@@ -38,8 +38,8 @@ if (!typeof(WebSocket) && typeof(MozWebSocket)) {
 }
 
 function fingerDown(x,y,z) {
-    document.getElementById("reddot").style.marginTop = y-600+'px';
-  document.getElementById("reddot").style.marginLeft = x+'px';
+    document.getElementById("reddot").style.marginTop = y-600+add+'px';
+  document.getElementById("reddot").style.marginLeft = (x*-1)+'px';
 
   addTap(x, y);
   redraw();
@@ -47,8 +47,8 @@ function fingerDown(x,y,z) {
 
 function fingerMove(x,y,z) {
     if(isdrawing){
-        document.getElementById("reddot").style.marginTop = y-600+'px';
-  document.getElementById("reddot").style.marginLeft = x+'px';
+        document.getElementById("reddot").style.marginTop = y-600+add+'px';
+  document.getElementById("reddot").style.marginLeft = (x*-1)+'px';
       addTap(x, y, true);
       redraw();
   }
