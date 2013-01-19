@@ -23,7 +23,7 @@ Mousetrap.bind('p', function() {
 });
 
 Mousetrap.bind('n', function() { 
-document.getElementById('canvas').width=400
+document.getElementById('canvas').width=350;
 });
 
 Mousetrap.bind('d', function() { 
@@ -31,7 +31,7 @@ var oCanvas = document.getElementById("canvas");
 Canvas2Image.saveAsPNG(oCanvas);
 });
 
-add=200;
+add=175;
 //Support Firefox
 if (!typeof(WebSocket) && typeof(MozWebSocket)) {
   WebSocket = MozWebSocket;
@@ -56,7 +56,7 @@ var tapDrag = new Array();
 function addTap(x, y, dragging)
 {
   tapX.push(x+add);
-  tapY.push((y*-1)+400);
+  tapY.push((y*-1)+330);
   tapDrag.push(dragging);
 }
 
@@ -156,7 +156,7 @@ p=pause drawing
 d=download drawing
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
-<canvas width="400" height="400" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994, idiot.</canvas>
+<canvas width="350" height="350" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994, idiot.</canvas>
 <div id="reddot"></div>
 <script>
   setStuffUp();
@@ -167,8 +167,8 @@ d=download drawing
     height: 10px;
     border-radius: 5px;
     background-color: red;
-    margin-top: -305px;
-    margin-left: 295px;
+    margin-top: -180px;
+    margin-left: 170px;
   }
 </style>
 </body>
