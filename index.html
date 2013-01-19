@@ -15,7 +15,9 @@ c,b,d,f){var a=a.replace(/\s+/g," "),g=a.split(" "),e,h,j=[];if(1<g.length){var 
 c));return this},trigger:function(a,c){i[a+":"+c]();return this},reset:function(){k={};i={};return this},stopCallback:function(a,c){return-1<(" "+c.className+" ").indexOf(" mousetrap ")?!1:"INPUT"==c.tagName||"SELECT"==c.tagName||"TEXTAREA"==c.tagName||c.contentEditable&&"true"==c.contentEditable}};window.Mousetrap=u;"function"===typeof define&&define.amd&&define(u)})();
 
 
-var ws, isdrawing, add, tempstop;
+var ws, isdrawing, add, tempstop, color, width;
+
+color = "#000000"
 
 /**
  * Draws a rounded rectangle using the current state of the canvas. 
@@ -171,9 +173,9 @@ function init() {
   function redraw() {
     canvas.width = canvas.width; // Clears the canvas
   
-  canvas.strokeStyle = "#000000";
+  canvas.strokeStyle = color;
   canvas.lineJoin = "round";
-  canvas.lineWidth = 5;
+  canvas.lineWidth = width;
     	
   for(var i=0; i < tapX.length; i++)
   {		
