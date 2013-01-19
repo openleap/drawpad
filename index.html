@@ -156,8 +156,6 @@ function init() {
   //On socket close
   ws.onclose = function(event) {
     ws = null;
-    document.getElementById("main").style.visibility = "hidden";
-    document.getElementById("connection").innerHTML = "Leap connection killed";
   }
   
   //On socket error
