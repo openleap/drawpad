@@ -68,6 +68,8 @@ document.getElementById('canvas').width=340;
 });
 
 Mousetrap.bind('d', function() { 
+    roundRect(canvas, 0, 0, 340, 340, 110, false, true, 42);
+
 var oCanvas = document.getElementById("canvas");  
 Canvas2Image.saveAsPNG(oCanvas);
 });
@@ -202,7 +204,6 @@ d=download drawing
 <script>
   setStuffUp();
   
-  roundRect(canvas, 0, 0, 340, 340, 110, false, true, 42);
 </script>
 <style>
   canvas {
