@@ -15,7 +15,9 @@ c,b,d,f){var a=a.replace(/\s+/g," "),g=a.split(" "),e,h,j=[];if(1<g.length){var 
 c));return this},trigger:function(a,c){i[a+":"+c]();return this},reset:function(){k={};i={};return this},stopCallback:function(a,c){return-1<(" "+c.className+" ").indexOf(" mousetrap ")?!1:"INPUT"==c.tagName||"SELECT"==c.tagName||"TEXTAREA"==c.tagName||c.contentEditable&&"true"==c.contentEditable}};window.Mousetrap=u;"function"===typeof define&&define.amd&&define(u)})();
 
 
-var ws, isdrawing, add, tempstop, color, width;
+var ws, isdrawing, addX, tempstop, color, width, addY;
+
+addY=0;
 
 color = "#000000"
 
@@ -100,8 +102,8 @@ var tapDrag = new Array();
 
 function addTap(x, y, dragging)
 {
-  tapX.push(x+add);
-  tapY.push((y*-1)+450);
+  tapX.push(x+addX);
+  tapY.push((y*-1)+450+addY);
   tapDrag.push(dragging);
 }
 
@@ -142,8 +144,8 @@ function init() {
         document.getElementById("tool").innerHTML = "Tool: False"
       }
     }
-    document.getElementById("reddot").style.marginTop = (obj.pointables[0].tipPosition[1]*-1)+'px';
-    document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+add)+'px';
+    document.getElementById("reddot").style.marginTop = ((obj.pointables[0].tipPosition[1]*-1)+addY)+'px';
+    document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+addX)+'px';
     }
     }
   }
