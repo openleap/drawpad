@@ -69,7 +69,6 @@ function init() {
   
   //On connection
   ws.onopen = function(event) {
-    document.getElementById("main").style.visibility = "visible";
     document.getElementById("connection").innerHTML = "Leap connection good!";
   };
   
@@ -103,7 +102,6 @@ function init() {
     }
     }
   }
-    document.getElementById("output").innerHTML = '<pre>' + str + '</pre>';
   };
   
   if (!isdrawing) { tapX= []; tapY=[] }
