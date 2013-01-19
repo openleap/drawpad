@@ -56,7 +56,7 @@ var tapDrag = new Array();
 function addTap(x, y, dragging)
 {
   tapX.push(x+add);
-  tapY.push((y*-1)+480);
+  tapY.push((y*-1)+460);
   tapDrag.push(dragging);
 }
 
@@ -162,6 +162,10 @@ d=download drawing
   setStuffUp();
 </script>
 <style>
+  canvas {
+    border: 1px dashed black;
+    border-radius: 100px;
+  }
   #reddot {
     width: 10px;
     height: 10px;
