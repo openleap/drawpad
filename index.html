@@ -29,7 +29,7 @@ var ws, isdrawing, add, tempstop;
  * @param {Number} radius The corner radius. Defaults to 5;
  * @param {Boolean} fill Whether to fill the rectangle. Defaults to false.
  * @param {Boolean} stroke Whether to stroke the rectangle. Defaults to true.
- * @param {Number} strokewidth The width of the stroke, if one exists
+ * @param {Number} strokeWidth The width of the stroke, if one exists
  */
 function roundRect(ctx, x, y, width, height, radius, fill, stroke, strokeWidth) {
   if (typeof stroke == "undefined" ) {
@@ -50,7 +50,7 @@ function roundRect(ctx, x, y, width, height, radius, fill, stroke, strokeWidth) 
   ctx.quadraticCurveTo(x, y, x + radius, y);
   ctx.closePath();
   if (stroke) {
-    if (strokewidth) canvas.lineWidth = strokeWidth;
+    if (strokeWidth) canvas.lineWidth = strokeWidth;
     ctx.stroke();
   }
   if (fill) {
