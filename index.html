@@ -152,6 +152,7 @@ function init() {
     }
     else if (!obj.pointables[0].tool) {
       //if this is not a tool, bring up the menu
+      isdrawing=false;
     }
     document.getElementById("reddot").style.marginTop = ((obj.pointables[0].tipPosition[1]*-1)+addY+100)+'px';
     document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+addX)+'px';
@@ -161,7 +162,9 @@ function init() {
   };
   
   if (!isdrawing) { 
-    tapX= []; tapY=[];
+    console.log('nd')
+    tapX= []; 
+    tapY=[];
     
     document.getElementById("reddot").style.backgroundColor = "red";
   }
