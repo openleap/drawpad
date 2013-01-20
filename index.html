@@ -159,15 +159,17 @@ function init() {
     }
     }
   }
-  };
   
-  if (!isdrawing) { 
-    console.log('nd')
+    if (!isdrawing) { 
     tapX= []; 
     tapY=[];
     
     document.getElementById("reddot").style.backgroundColor = "red";
   }
+  
+  };
+  
+
   
   //On socket close
   ws.onclose = function(event) {
