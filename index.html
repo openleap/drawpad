@@ -132,13 +132,15 @@ function init() {
     if (obj) {
     if (obj.pointables) {
     if (obj.pointables[0]) {
-      if (!tempstop) {
+      if (!tempstop && obj.pointables[0].tool) {
       if (!isdrawing) {
         fingerDown(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
       }
       else {
        fingerMove(obj.pointables[0].tipPosition[0], obj.pointables[0].tipPosition[1], obj.pointables[0].tipPosition[2]);
       }
+      
+      document.getElementById("reddot").style.backgroundColor = "green";
       
             isdrawing=true;
       
@@ -148,6 +150,9 @@ function init() {
         document.getElementById("tool").innerHTML = "Tool: False"
       }
     }
+    else if (!obj.pointables[0].tool) {
+      //if this is not a tool, bring up the menu
+    }
     document.getElementById("reddot").style.marginTop = ((obj.pointables[0].tipPosition[1]*-1)+addY+100)+'px';
     document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+addX)+'px';
     }
@@ -155,7 +160,11 @@ function init() {
   }
   };
   
-  if (!isdrawing) { tapX= []; tapY=[] }
+  if (!isdrawing) { 
+    tapX= []; tapY=[];
+    
+    document.getElementById("reddot").style.backgroundColor = "red";
+  }
   
   //On socket close
   ws.onclose = function(event) {
@@ -232,6 +241,7 @@ d=download drawing
     background-color: red;
     margin-top: -175px;
     margin-left: 165px;
+    position: relative;
   }
 </style>
 </body>
