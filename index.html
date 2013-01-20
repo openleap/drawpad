@@ -154,7 +154,7 @@ function init() {
     else if (!obj.pointables[0].tool) {
       //if this is not a tool, bring up the menu
       isdrawing=false;
-          document.getElementById('bigmenu').style.display = "none";
+          document.getElementById('bigmenu').style.display = "";
 
     }
     document.getElementById("reddot").style.marginTop = ((obj.pointables[0].tipPosition[1]*-1)+addY+100)+'px';
@@ -240,18 +240,18 @@ d=download drawing
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
 
-<div class="bigmenu">
-<div class="menusquare" id="colormenu" onclick="changeColor();" style="background-color: lightblue; margin-bottom: -113px; color: black;">Color</div>
-<div class="menusquare" onclick="hidemenus" style="background-color: lightred; margin-bottom: -226px; margin-left:113px; color:black;">OK</div>
-<div class="menusquare" style=""></div>
+<div class="bigmenu" style="margin-bottom: -340px; margin-left: 0px;">
+<div class="menusquare" id="colormenu" onclick="changeColor();" style="background-color: green; color: black;">Color</div>
+<div class="menusquare" style="margin-top: -113px; margin-left:113px; color:black;width: 114px;"></div>
+<div class="menusquare" style="margin-top: -113px; margin-left: 227px;"></div>
+
+<div class="menusquare" style="height: 114px;"></div>
+<div class="menusquare" onclick="hideMenus();" style="background-color: lightgreen; margin-top: -114px; margin-left: 113px; height: 114px; width: 114px; margin-top: -114px;">OK</div>
+<div class="menusquare" style="margin-left: 227px; margin-top: -114px; height: 114px;"></div>
 
 <div class="menusquare" style=""></div>
-<div class="menusquare" style=""></div>
-<div class="menusquare" style=""></div>
-
-<div class="menusquare" style=""></div>
-<div class="menusquare" style=""></div>
-<div class="menusquare" style=""></div>
+<div class="menusquare" style="margin-left: 113px; margin-top: -113px; width: 114px;"></div>
+<div class="menusquare" style="margin-left: 227px; margin-top: -113px;"></div>
 </div>
 
 <canvas width="340" height="340" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994.</canvas>
