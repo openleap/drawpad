@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,8 +156,6 @@ function init() {
   //On socket close
   ws.onclose = function(event) {
     ws = null;
-    document.getElementById("main").style.visibility = "hidden";
-    document.getElementById("connection").innerHTML = "Leap connection killed";
   }
   
   //On socket error
@@ -204,16 +201,22 @@ p=pause drawing
 d=download drawing
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
-<canvas width="340" height="340" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994, idiot.</canvas>
+
+<canvas width="340" height="340" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994.</canvas>
+<canvas width="340" height="340" id="canvasol"></canvas>
+
 <div id="reddot"></div>
 <script>
   setStuffUp();
   
+  canvasol = document.getElementById('canvasol').getContext('2d'); 
+  
+  for (var i=0; i<60; i++) { roundRect(canvasol, -(0.5*i), -(0.5*i), 340+i, 340+i, 108, false, true, 1); }
 </script>
 <style>
-  canvas {
-    border: 3px dashed black;
-    border-radius: 100px;
+  #canvas {
+    display: block; 
+    margin-bottom: -340px;
   }
   #reddot {
     width: 10px;
