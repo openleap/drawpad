@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>Drawpad - draw with your Leap</title>
-<script src="base64.js"></script>
-<script src="canvas2image.js"></script>
+<script src="blob.js"></script>
+<script src="canvas-toBlob.js"></script>
+<script src="filesaver.js"></script>
 <script>
 /* mousetrap v1.2.2 craig.is/killing/mice */
 (function(){function q(a,c,b){a.addEventListener?a.addEventListener(c,b,!1):a.attachEvent("on"+c,b)}function x(a){return"keypress"==a.type?String.fromCharCode(a.which):h[a.which]?h[a.which]:y[a.which]?y[a.which]:String.fromCharCode(a.which).toLowerCase()}function r(a,c){var a=a||{},b=!1,d;for(d in l)a[d]&&l[d]>c?b=!0:l[d]=0;b||(n=!1)}function z(a,c,b,d,F){var g,e,f=[],j=b.type;if(!k[a])return[];"keyup"==j&&s(a)&&(c=[a]);for(g=0;g<k[a].length;++g)if(e=k[a][g],!(e.seq&&l[e.seq]!=e.level)&&j==e.action&&
