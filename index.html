@@ -73,7 +73,7 @@ document.getElementById('canvas').width=340;
 });
 
 Mousetrap.bind('d', function() { 
-context.fillStyle="black";
+canvas.fillStyle="black";
   
 for (var i=0; i<60; i++) { roundRect(canvas, -(0.5*i), -(0.5*i), 340+i, 340+i, 110, false, true, 1); }
 
