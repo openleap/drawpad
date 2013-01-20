@@ -4,6 +4,7 @@
 <title>Drawpad - draw with your Leap</title>
 <script src="blob.js"></script>
 <script src="canvas-toBlob.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="filesaver.js"></script>
 <script>
 /* mousetrap v1.2.2 craig.is/killing/mice */
@@ -153,6 +154,9 @@ function init() {
     else if (!obj.pointables[0].tool) {
       //if this is not a tool, bring up the menu
       isdrawing=false;
+      $(".menusquare").each(function(index) {
+        this.style.display = "";
+      });
     }
     document.getElementById("reddot").style.marginTop = ((obj.pointables[0].tipPosition[1]*-1)+addY+100)+'px';
     document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+addX)+'px';
@@ -184,9 +188,27 @@ function init() {
 
 }
 
-    function setStuffUp() {
+function hideMenus() {
+    $(".menusquare").each(function(index) {
+        this.style.display = "none";
+    });
+}
+
+function changeColor() {
+  if (color="black") tcolor="red"
+  if (color="red") tcolor="green"
+  if (color="green") tcolor="blue"
+  if (color="blue") tcolor="black"
+ 
+ color=tcolor;
+  document.getElementById('colormenu').style.backgroundColor = color;
+  if (color=="blue" || color=="black") { document.getElementById('colormenu').style.color = "white"; }
+  else { document.getElementById('colormenu').style.color = "black"; }
+}
+
+function setStuffUp() {
     canvas = document.getElementById('canvas').getContext("2d");
-  }
+}
   
   function redraw() {
     canvas.width = canvas.width; // Clears the canvas
@@ -220,6 +242,8 @@ d=download drawing
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
 
+<div class="menusquare" id="colormenu" onclick="changecolor();" style="background-color: lightblue; margin-bottom: -113px; color: black;">Color</div>
+<div class="menusquare" onclick="hidemenus" style="background-color: lightred; margin-bottom: -226px; margin-left:113px; color:black;">OK</div>
 <canvas width="340" height="340" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994.</canvas>
 <canvas width="340" height="340" id="canvasol"></canvas>
 
@@ -247,6 +271,17 @@ d=download drawing
     margin-top: -175px;
     margin-left: 165px;
     position: relative;
+  }
+  .menusquare {
+    height: 113px;
+    width: 113px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 104px;
+    font-size: 32px;
+    font-family: sans-serif;
+    display: none;
   }
 </style>
 </body>
