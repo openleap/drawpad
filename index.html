@@ -73,10 +73,11 @@ document.getElementById('canvas').width=340;
 });
 
 Mousetrap.bind('d', function() { 
-color="black";
+context.fillStyle="black";
+  
 for (var i=0; i<60; i++) { roundRect(canvas, -(0.5*i), -(0.5*i), 340+i, 340+i, 110, false, true, 1); }
 
-canvas.toBlob(function(blob) {
+document.getElementById('canvas').toBlob(function(blob) {
     saveAs(blob, "drawpad_sketch.png");
 });
 });
@@ -215,6 +216,9 @@ d=download drawing
   canvasol = document.getElementById('canvasol').getContext('2d'); 
   
   for (var i=0; i<60; i++) { roundRect(canvasol, -(0.5*i), -(0.5*i), 340+i, 340+i, 108, false, true, 1); }
+  
+  canvas.fillStyle="white";
+  canvas.fillRect(0,0,340,340);
 </script>
 <style>
   #canvas {
