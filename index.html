@@ -21,7 +21,7 @@ var ws, isdrawing, addX, tempstop, color, width, addY;
 
 addY=0;
 
-color = "#000000";
+color = "black";
 
 /**
  * Draws a rounded rectangle using the current state of the canvas. 
@@ -64,7 +64,7 @@ function roundRect(ctx, x, y, width, height, radius, fill, stroke, strokeWidth) 
   }        
 }
 
-Mousetrap.bind('p', function() { 
+Mousetrap.bind('p', function() {
   if (tempstop) { tempstop=false; }
   else { tempstop=true; }
 });
@@ -199,7 +199,7 @@ function changeColor() {
   if (color=="green") tcolor="blue";
   if (color=="blue") tcolor="black";
  
- color=tcolor;
+  if (tcolor) color=tcolor;
   document.getElementById('colormenu').style.backgroundColor = color;
   if (color=="blue" || color=="black") { document.getElementById('colormenu').style.color = "white"; }
   else { document.getElementById('colormenu').style.color = "black"; }
