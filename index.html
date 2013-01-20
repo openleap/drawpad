@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -144,7 +145,7 @@ function init() {
         document.getElementById("tool").innerHTML = "Tool: False"
       }
     }
-    document.getElementById("reddot").style.marginTop = ((obj.pointables[0].tipPosition[1]*-1)+addY)+'px';
+    document.getElementById("reddot").style.marginTop = ((obj.pointables[0].tipPosition[1]*-1)+addY+100)+'px';
     document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+addX)+'px';
     }
     }
@@ -156,6 +157,8 @@ function init() {
   //On socket close
   ws.onclose = function(event) {
     ws = null;
+    document.getElementById("main").style.visibility = "hidden";
+    document.getElementById("connection").innerHTML = "Leap connection killed";
   }
   
   //On socket error
@@ -176,9 +179,9 @@ function init() {
   canvas.strokeStyle = color;
   canvas.lineJoin = "round";
   canvas.lineWidth = width;
-    	
+      
   for(var i=0; i < tapX.length; i++)
-  {		
+  {   
     canvas.beginPath();
     if(tapDrag[i] && i){
       canvas.moveTo(tapX[i-1], tapY[i-1]);
