@@ -19,7 +19,7 @@ var ws, isdrawing, addX, tempstop, color, width, addY;
 
 addY=0;
 
-color = "#000000"
+color = "#000000";
 
 /**
  * Draws a rounded rectangle using the current state of the canvas. 
@@ -72,10 +72,12 @@ document.getElementById('canvas').width=340;
 });
 
 Mousetrap.bind('d', function() { 
+color="black";
 for (var i=0; i<60; i++) { roundRect(canvas, -(0.5*i), -(0.5*i), 340+i, 340+i, 110, false, true, 1); }
 
-var oCanvas = document.getElementById("canvas");  
-Canvas2Image.saveAsPNG(oCanvas);
+canvas.toBlob(function(blob) {
+    saveAs(blob, "drawpad_sketch.png");
+});
 });
 
 addX=170;
