@@ -154,9 +154,8 @@ function init() {
     else if (!obj.pointables[0].tool) {
       //if this is not a tool, bring up the menu
       isdrawing=false;
-      $(".menusquare").each(function(index) {
-        this.style.display = "";
-      });
+          document.getElementById('bigmenu').style.display = "none";
+
     }
     document.getElementById("reddot").style.marginTop = ((obj.pointables[0].tipPosition[1]*-1)+addY+100)+'px';
     document.getElementById("reddot").style.marginLeft = (obj.pointables[0].tipPosition[0]+addX)+'px';
@@ -189,16 +188,14 @@ function init() {
 }
 
 function hideMenus() {
-    $(".menusquare").each(function(index) {
-        this.style.display = "none";
-    });
-}
+    document.getElementById('bigmenu').style.display = "none";
 
 function changeColor() {
-  if (color="black") tcolor="red"
-  if (color="red") tcolor="green"
-  if (color="green") tcolor="blue"
-  if (color="blue") tcolor="black"
+  var tcolor;
+  if (color=="black") tcolor="red";
+  if (color=="red") tcolor="green";
+  if (color=="green") tcolor="blue";
+  if (color=="blue") tcolor="black";
  
  color=tcolor;
   document.getElementById('colormenu').style.backgroundColor = color;
@@ -242,8 +239,20 @@ d=download drawing
 <h2 id="tool">Tool: False</h2>
 <div id="connection">Connect your Leap!</div>
 
-<div class="menusquare" id="colormenu" onclick="changecolor();" style="background-color: lightblue; margin-bottom: -113px; color: black;">Color</div>
+<div class="bigmenu">
+<div class="menusquare" id="colormenu" onclick="changeColor();" style="background-color: lightblue; margin-bottom: -113px; color: black;">Color</div>
 <div class="menusquare" onclick="hidemenus" style="background-color: lightred; margin-bottom: -226px; margin-left:113px; color:black;">OK</div>
+<div class="menusquare" style=""></div>
+
+<div class="menusquare" style=""></div>
+<div class="menusquare" style=""></div>
+<div class="menusquare" style=""></div>
+
+<div class="menusquare" style=""></div>
+<div class="menusquare" style=""></div>
+<div class="menusquare" style=""></div>
+</div>
+
 <canvas width="340" height="340" id="canvas">It appears your browser doesn't support Canvas! We kindly advise you to get back in your time machine and set it for 1994.</canvas>
 <canvas width="340" height="340" id="canvasol"></canvas>
 
@@ -259,6 +268,9 @@ d=download drawing
   canvas.fillRect(0,0,340,340);
 </script>
 <style>
+  #bigmenu {
+    display:none;
+  }
   #canvas {
     display: block; 
     margin-bottom: -340px;
@@ -281,7 +293,6 @@ d=download drawing
     line-height: 104px;
     font-size: 32px;
     font-family: sans-serif;
-    display: none;
   }
 </style>
 </body>
