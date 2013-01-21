@@ -121,7 +121,7 @@ function init() {
   
   //On connection
   ws.onopen = function(event) {
-    document.getElementById("connection").innerHTML = "Leap connection good!";
+    //document.getElementById("connection").innerHTML = "Leap connection good!";
   };
   
   //On new message
@@ -147,9 +147,11 @@ function init() {
             isdrawing=true;
       
       //detect tool type
-      if (obj.pointables[0].tool) { document.getElementById("tool").innerHTML = "Tool: True" }
+      if (obj.pointables[0].tool) { 
+        //document.getElementById("tool").innerHTML = "Tool: True" 
+        }
       else {
-        document.getElementById("tool").innerHTML = "Tool: False"
+        //document.getElementById("tool").innerHTML = "Tool: False"
       }
     }
     else if (!obj.pointables[0].tool) {
