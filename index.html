@@ -70,13 +70,19 @@ Mousetrap.bind('p', function() {
 });
 
 Mousetrap.bind('n', function() { 
-document.getElementById('canvas').width=340;
+  document.getElementById('canvas').width=340;
+
+  canvas.fillStyle="white";
+  canvas.fillRect(0,0,340,340);
 });
 
 Mousetrap.bind('d', function() { 
-canvas.fillStyle="black";
-  
+var vtcolor = color;
+color="black"
+
 for (var i=0; i<60; i++) { roundRect(canvas, -(0.5*i), -(0.5*i), 340+i, 340+i, 110, false, true, 1); }
+
+color=vtcolor;
 
 document.getElementById('canvas').toBlob(function(blob) {
     saveAs(blob, "drawpad_sketch.png");
@@ -242,7 +248,7 @@ p=pause drawing<br>
 d=download drawing<br><br>
 
 Use a tool to draw (a long wood pencil or chopstick work best) and use your finger to pause drawing. Drawing will resume when you use a tool again.
-<br><br>
+<br><br>Red dot=drawing paused; green dot=drawing unpaused.<br><br>
 You can switch easily from finger to tool (from paused to unpaused) because Drawpad recognizes the farthest-forward object; if you have your finger and a tool paralell to each other, chopstick in front, you can move your finger forward to pause, and move your chopstick forward to begin drawing again.
 <br><br><br><br><br>
 <div id="center">
