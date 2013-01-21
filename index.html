@@ -238,9 +238,8 @@ function setStuffUp() {
 n=new drawing
 p=pause drawing
 d=download drawing
-<h2 id="tool">Tool: False</h2>
-<div id="connection">Connect your Leap!</div>
 
+<div id="center">
 <div id="bigmenu" style="margin-bottom: -340px; margin-left: 0px;">
 <div class="menusquare" id="colormenu" onclick="changeColor();" style="background-color: green; color: black;">Color</div>
 <div class="menusquare" style="margin-top: -113px; margin-left:113px; color:black;width: 114px;"></div>
@@ -259,6 +258,8 @@ d=download drawing
 <canvas width="340" height="340" id="canvasol"></canvas>
 
 <div id="reddot"></div>
+</div>
+
 <script>
   setStuffUp();
   
@@ -270,6 +271,16 @@ d=download drawing
   canvas.fillRect(0,0,340,340);
 </script>
 <style>
+  #center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  body {
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+  }
   #bigmenu {
     display:none;
   }
