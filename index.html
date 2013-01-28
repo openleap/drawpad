@@ -16,7 +16,6 @@ c,b,d,f){var a=a.replace(/\s+/g," "),g=a.split(" "),e,h,j=[];if(1<g.length){var 
 "*":"8","(":"9",")":"0",_:"-","+":"=",":":";",'"':"'","<":",",">":".","?":"/","|":"\\"},D={option:"alt",command:"meta","return":"enter",escape:"esc"},p,k={},i={},l={},C,w=!1,n=!1,f=1;20>f;++f)h[111+f]="f"+f;for(f=0;9>=f;++f)h[f+96]=f;q(document,"keypress",v);q(document,"keydown",v);q(document,"keyup",v);var u={bind:function(a,c,b){for(var d=a instanceof Array?a:[a],f=0;f<d.length;++f)B(d[f],c,b);i[a+":"+b]=c;return this},unbind:function(a,c){i[a+":"+c]&&(delete i[a+":"+c],this.bind(a,function(){},
 c));return this},trigger:function(a,c){i[a+":"+c]();return this},reset:function(){k={};i={};return this},stopCallback:function(a,c){return-1<(" "+c.className+" ").indexOf(" mousetrap ")?!1:"INPUT"==c.tagName||"SELECT"==c.tagName||"TEXTAREA"==c.tagName||c.contentEditable&&"true"==c.contentEditable}};window.Mousetrap=u;"function"===typeof define&&define.amd&&define(u)})();
 
-
 var ws, isdrawing, addX, tempstop, color, width, addY;
 
 addY=0;
